@@ -58,7 +58,7 @@ public class Main {
     }
 
     private static void printInfo(Bus bus) {
-        System.out.println("Автобус Марка " +  bus.getBrand() + '\'' +", Модель " +  bus.getModel() + '\'' +
+        System.out.println("Автобус Марка " + bus.getBrand() + '\'' + ", Модель " + bus.getModel() + '\'' +
                 ", Объем двигателя в литрах " + bus.getEngineVolume());
     }
 }
