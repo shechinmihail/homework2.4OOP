@@ -12,12 +12,12 @@ public final class Bus extends Transport implements Competing {
 
     @Override
     public void startMoving() {
-
+        System.out.println(" Запустить двигатель и начать движение к Старту");
     }
 
     @Override
     public void finishTheMove() {
-
+        System.out.println("Пересечь финишную черту и заехать в бокс");
     }
 
     @Override

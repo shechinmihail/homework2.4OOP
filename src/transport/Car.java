@@ -12,12 +12,12 @@ public final class Car extends Transport implements Competing {
 
     @Override
     public void startMoving() {
-
+        System.out.println("Вставить ключ в замок зажигания и запустить двигатель");
     }
 
     @Override
     public void finishTheMove() {
-
+        System.out.println("Заглушить двигатель и выйти из машины");
     }
 
     @Override

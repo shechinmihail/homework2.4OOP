@@ -1,29 +1,15 @@
 package transport;
 
 public abstract class Transport {
-    public String getBrand;
     private String brand;
     private String model;
-    double engineVolume;
+    private double engineVolume;
 
     public Transport(String brand, String model, double engineVolume) {
-        if (brand == null) {
-            this.brand =
-                    "default";
-        } else {
-            this.brand = brand;
-        }
-        if (model == null) {
-            this.model = "default";
-        } else {
-            this.model = model;
-        }
-        this.engineVolume = engineVolume;
-        if (engineVolume == 0) {
-            this.engineVolume = 1.5;
-        } else {
-            this.engineVolume = engineVolume;
-        }
+        setBrand(brand);
+        setModel(model);
+        setEngineVolume(engineVolume);
+
     }
 
 
@@ -32,7 +18,12 @@ public abstract class Transport {
     }
 
     public void setBrand(String brand) {
-        this.brand = brand;
+        if (brand == null) {
+            this.brand =
+                    "default";
+        } else {
+            this.brand = brand;
+        }
     }
 
     public String getModel() {
@@ -40,7 +31,11 @@ public abstract class Transport {
     }
 
     public void setModel(String model) {
-        this.model = model;
+        if (this.model == null) {
+            this.model = "default";
+        } else {
+            this.model = this.model;
+        }
     }
 
     public double getEngineVolume() {
@@ -48,8 +43,13 @@ public abstract class Transport {
     }
 
     public void setEngineVolume(double engineVolume) {
-        this.engineVolume = engineVolume;
+        if (this.engineVolume == 0) {
+            this.engineVolume = 1.5;
+        } else {
+            this.engineVolume = this.engineVolume;
+        }
     }
+
     public abstract void startMoving();
 
     public abstract void finishTheMove();
