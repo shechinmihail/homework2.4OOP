@@ -14,12 +14,12 @@ public class СarАreight extends Transport implements Competing {
 
     @Override
     public void startMoving() {
-
+        System.out.println("Взять кривой ключ и с 10-й попытки запустить двигатель");
     }
 
     @Override
     public void finishTheMove() {
-
+        System.out.println("Доехать до финиша");
     }
 
     @Override

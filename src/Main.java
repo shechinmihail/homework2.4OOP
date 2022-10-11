@@ -1,5 +1,6 @@
 import transport.Bus;
 import transport.Car;
+import transport.Transport;
 import transport.СarАreight;
 
 public class Main {
@@ -34,11 +35,11 @@ public class Main {
         printInfo(maz);
         printInfo(mercedes);
 
-        Driver<Car> ivan = new Driver<>("Петров Иван Васильевич", "В", 15);
-        ivan.drive(bmw);
-        Driver<Bus> petr = new Driver<>("Иванов Петр Николаевич", "D", 20);
+        Driver<Car> ivan = new Driver<>("Петров Иван Васильевич", "В", 15, bmw);
+        ivan.drive(audi);
+        Driver<Bus> petr = new Driver<>("Иванов Петр Николаевич", "D", 20, maz);
         petr.drive(maz);
-        Driver<СarАreight> nikolay = new Driver<>("Фоменко Николай Иванович", "С", 16);
+        Driver<СarАreight> nikolay = new Driver<>("Фоменко Николай Иванович", "С", 16, zil);
         nikolay.drive(zil);
     }
 
