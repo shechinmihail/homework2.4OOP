@@ -6,8 +6,19 @@ public final class Bus extends Transport implements Competing {
     public static final String[] PIT_STOP = {"Количество Пит-Стопов", "Время Пит-Стопа"};
     public static final String[] LAP_TIME = {"Количество кругов", "Время"};
 
-    public Bus(String brand, String model, double engineVolume) {
+    public CapacityType capacityType;
+
+    public Bus(String brand, String model, double engineVolume, CapacityType capacityType) {
         super(brand, model, engineVolume);
+        this.capacityType = capacityType;
+    }
+
+    public CapacityType getCapacityType() {
+        return capacityType;
+    }
+
+    public void setCapacityType(CapacityType capacityType) {
+        this.capacityType = capacityType;
     }
 
     @Override
@@ -18,6 +29,15 @@ public final class Bus extends Transport implements Competing {
     @Override
     public void finishTheMove() {
         System.out.println("Пересечь финишную черту и заехать в бокс");
+    }
+
+    @Override
+    public void printType() {
+        if (capacityType == null) {
+            System.out.println("Данных недостаточно");
+        } else {
+            System.out.println("Вместительность автобуса: " + capacityType.getDescription());
+        }
     }
 
     @Override
