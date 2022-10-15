@@ -10,7 +10,7 @@ public enum LoadType {
     private final String description;
 
     LoadType(String description) {
-        if (description == null || description.isBlank()) {
+        if (description.isBlank()) {
             this.description = "Данных недостаточно";
         } else {
             this.description = description;

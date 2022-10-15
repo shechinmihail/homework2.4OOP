@@ -39,8 +39,9 @@ public class Main {
         Driver<СarАreight> nikolay = new Driver<>("Фоменко Николай Иванович", "С", 16, zil);
         nikolay.drive(zil);
 
-        //transport.printType();
-
+        bmw.printType();
+        maz.printType();
+        zil.printType();
     }
 
     private static void printInfo(Car car) {
