@@ -7,19 +7,38 @@ public class СarАreight extends Transport implements Competing {
     public static final String[] PIT_STOP = {"Количество Пит-Стопов", "Время Пит-Стопа"};
     public static final String[] LAP_TIME = {"Количество кругов", "Время"};
 
-    public СarАreight(String brand, String model, double engineVolume) {
+    public LoadType loadType;
+
+    public СarАreight(String brand, String model, double engineVolume, LoadType loadType) {
         super(brand, model, engineVolume);
+        this.loadType = loadType;
     }
 
+    public LoadType getLoadType() {
+        return loadType;
+    }
+
+    public void setLoadType(LoadType loadType) {
+        this.loadType = loadType;
+    }
 
     @Override
     public void startMoving() {
-
+        System.out.println("Взять кривой ключ и с 10-й попытки запустить двигатель");
     }
 
     @Override
     public void finishTheMove() {
+        System.out.println("Доехать до финиша");
+    }
 
+    @Override
+    public void printType() {
+        if (loadType == null) {
+            System.out.println("Данных недостаточно");
+        } else {
+            System.out.println("Грузоподъемность авто: " + loadType.getDescription());
+        }
     }
 
     @Override

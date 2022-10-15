@@ -5,19 +5,38 @@ public final class Car extends Transport implements Competing {
     public static final String BAD_SPEED = "Нужно ускоряться";
     public static final String[] PIT_STOP = {"Количество Пит-Стопов", "Время Пит-Стопа"};
     public static final String[] LAP_TIME = {"Количество кругов", "Время"};
+    private BodyType bodyType;
 
-    public Car(String brand, String model, double engineVolume) {
+    public Car(String brand, String model, double engineVolume, BodyType bodyType) {
         super(brand, model, engineVolume);
+        this.bodyType = bodyType;
+    }
+
+    public BodyType getBodyType() {
+        return bodyType;
+    }
+
+    public void setBodyType(BodyType bodyType) {
+        this.bodyType = bodyType;
     }
 
     @Override
     public void startMoving() {
-
+        System.out.println("Вставить ключ в замок зажигания и запустить двигатель");
     }
 
     @Override
     public void finishTheMove() {
+        System.out.println("Заглушить двигатель и выйти из машины");
+    }
 
+    @Override
+    public void printType() {
+        if (bodyType == null) {
+            System.out.println("Данных недостаточно");
+        } else {
+            System.out.println("Тип кузова авто: " + bodyType);
+        }
     }
 
     @Override
